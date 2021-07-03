@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo Get UTM Link</title>
+
+    <link href="assets/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="app" class="app">
+		<div class="content-title">
+			<h1>Pressione o botão abaixo:</h1>
+		</div>
+		<div class="content-cta">
+            <div class="content-cta-container">
+                <a id="botao1" class="btn-app" href="http://lucashelion.com.br?nome=lucas" target="_blank">
+                    Quero me inscrever agora
+                </a>
+            </div>
+		</div>
+	</div>
+
+	<script src="assets/get-utm-link.js"></script>
+	<script>
+        addOrigemNoLink("botao1");
+	</script>
+</body>
+</html>
