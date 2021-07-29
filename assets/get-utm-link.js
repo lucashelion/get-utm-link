@@ -22,3 +22,8 @@ function getQueryVariable(variable) {
 	}
 	return null;
 }
+
+function addSourceLL(parametro_origem = 'utm_content') {
+	var origem = getOrigem(parametro_origem);
+	document.getElementById("source").value = origem;
+}

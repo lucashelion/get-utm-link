@@ -82,6 +82,18 @@ form input {
     padding: 20px 0;
 }
 
+.app .content-form{
+    width: 100%;
+    padding: 15px;
+    background: #f0f0f5;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .app p {
     color: #151515;
     font-size: 20px;
