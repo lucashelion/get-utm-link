@@ -1,13 +1,12 @@
-function addOrigemNoLink(id_link){
+function addOrigemNoLink(id_link, parametro_destino = 'src', parametro_origem = 'utm_content'){
 	var link_href = document.getElementById(id_link).href;
-	link_href += '&src=' + getOrigem();
+	var link_conector = link_href.indexOf("?") > -1 ? "&" : "?";
+	link_href += link_conector + parametro_destino + '=' + getOrigem(parametro_origem);
 	document.getElementById(id_link).href = link_href;
 }
 
-function getOrigem() {
-	var origem = getQueryVariable('utm_content');
-	origem = (origem == null || origem == 'null') ? getQueryVariable('src') : origem;
-	origem = (origem == null || origem == 'null') ? getQueryVariable('website') : origem;
+function getOrigem(parametro = 'utm_content') {
+	var origem = getQueryVariable(parametro);
 	origem = (origem == null || origem == 'null') ? 'link-direto' : origem;
 	return origem;
 }

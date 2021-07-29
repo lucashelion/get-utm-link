@@ -15,7 +15,15 @@
 		<div class="content-cta">
             <div class="content-cta-container">
                 <a id="botao1" class="btn-app" href="http://lucashelion.com.br?nome=lucas" target="_blank">
-                    Quero me inscrever agora
+                    Tudo Padrão (SRC e utm_content)
+                </a>
+                <br /><br /><br />
+                <a id="botao2" class="btn-app" href="http://lucashelion.com.br" target="_blank">
+                    Destino SCK e Origem Padrão (utm_content)
+                </a>
+                <br /><br /><br />
+                <a id="botao3" class="btn-app" href="http://lucashelion.com.br?nome=lucas" target="_blank">
+                    Destino SCK e Origem "website"
                 </a>
             </div>
 		</div>
@@ -24,6 +32,8 @@
 	<script src="assets/get-utm-link.js"></script>
 	<script>
         addOrigemNoLink("botao1");
+        addOrigemNoLink("botao2", "sck");
+        addOrigemNoLink("botao3", "sck", "website");
 	</script>
 </body>
 </html>
