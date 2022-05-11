@@ -6,8 +6,8 @@ function addOrigemNoLink(id_link, parametro_destino = 'src', parametro_origem = 
 }
 
 function addOrigemParametro(id_parametro, parametro_origem = 'utm_content'){
-	var origem = getOrigem(parametro_origem);
-	document.getElementById(id_parametro).value = link_href;
+	var origem_ = getOrigem(parametro_origem);
+	document.getElementById(id_parametro).value = origem_;
 }
 
 function getOrigem(parametro = 'utm_content') {
