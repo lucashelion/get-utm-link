@@ -5,6 +5,11 @@ function addOrigemNoLink(id_link, parametro_destino = 'src', parametro_origem = 
 	document.getElementById(id_link).href = link_href;
 }
 
+function addOrigemParametro(id_parametro, parametro_origem = 'utm_content'){
+	var origem = getOrigem(parametro_origem);
+	document.getElementById(id_parametro).value = link_href;
+}
+
 function getOrigem(parametro = 'utm_content') {
 	var origem = getQueryVariable(parametro);
 	origem = (origem == null || origem == 'null') ? 'link-direto' : origem;
