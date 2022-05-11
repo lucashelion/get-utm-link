@@ -5,9 +5,14 @@ function addOrigemNoLink(id_link, parametro_destino = 'src', parametro_origem = 
 	document.getElementById(id_link).href = link_href;
 }
 
-function addOrigemParametro(id_parametro, parametro_origem = 'utm_content'){
+function addOrigemURL(parametro_origem = 'utm_content', parametro_destino = 'src'){
 	var origem_ = getOrigem(parametro_origem);
-	document.getElementById(id_parametro).value = origem_;
+	insertParam(parametro_destino, origem_);
+}
+
+function addOrigemCampoOculto(id_campo, parametro_origem = 'utm_content'){
+	var origem_ = getOrigem(parametro_origem);
+	document.getElementById(id_campo).value = origem_;
 }
 
 function getOrigem(parametro = 'utm_content') {
@@ -26,6 +31,29 @@ function getQueryVariable(variable) {
 		}
 	}
 	return null;
+}
+
+function insertParam(key, value) {
+    key = encodeURIComponent(key);
+    value = encodeURIComponent(value);
+    var kvp = document.location.search.substr(1).split('&');
+    let i=0;
+
+    for(; i<kvp.length; i++){
+        if (kvp[i].startsWith(key + '=')) {
+            let pair = kvp[i].split('=');
+            pair[1] = value;
+            kvp[i] = pair.join('=');
+            break;
+        }
+    }
+
+    if(i >= kvp.length){
+        kvp[kvp.length] = [key,value].join('=');
+    }
+    let params = kvp.join('&');
+
+    document.location.search = params;
 }
 
 function addSourceLL(parametro_origem = 'utm_content') {
