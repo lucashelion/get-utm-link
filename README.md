@@ -3,7 +3,7 @@ Funcionalidade que busca o parâmetro utm_content na url do site e adiciona esse
 Exemplo de uso:
 
 <code>
-<script src="https://lucashelion.com.br/dev/get-utm-link/assets/get-utm-link.js"></script>
+<script src="https://app.lucashelion.com.br/dev/get-utm-link/assets/get-utm-link.js"></script>
 <script>
 addOrigemNoLink("botao1");
 </script>
