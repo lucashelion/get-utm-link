@@ -5,9 +5,12 @@ function addOrigemNoLink(id_link, parametro_destino = 'src', parametro_origem = 
 	document.getElementById(id_link).href = link_href;
 }
 
-function addOrigemURL(parametro_origem = 'utm_content', parametro_destino = 'src'){
-	var origem_ = getOrigem(parametro_origem);
-	insertParam(parametro_destino, origem_);
+function addOrigemUrl(parametro_origem = 'utm_content', parametro_destino = 'src'){
+	var parametroDestino = getQueryVariable(parametro_destino);
+	if(parametroDestino == null){
+		var origem_ = getOrigem(parametro_origem);
+		insertParam(parametro_destino, origem_);
+	}
 }
 
 function addOrigemCampoOculto(id_campo, parametro_origem = 'utm_content'){
@@ -51,7 +54,14 @@ function insertParam(key, value) {
     if(i >= kvp.length){
         kvp[kvp.length] = [key,value].join('=');
     }
-    let params = kvp.join('&');
+
+    var site_url = document.location.href;
+    var params = '';
+    
+    if(site_url.includes("?"))
+    	params = kvp.join('&');
+    else
+    	params = kvp.join('?');
 
     document.location.search = params;
 }
